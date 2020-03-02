@@ -21,3 +21,9 @@ I'll summarize each project below
 * ActivityViewController
 * NavigationBarItem
 
+## Project 4 - Web Browser
+* loadView()
+* Webkit
+* delegation
+* KeyValueObserving
+* UIToolbar
