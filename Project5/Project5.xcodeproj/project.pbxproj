@@ -13,6 +13,7 @@
 		E28676BD240EFF1800EAACEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E28676BB240EFF1800EAACEB /* Main.storyboard */; };
 		E28676BF240EFF1A00EAACEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E28676BE240EFF1A00EAACEB /* Assets.xcassets */; };
 		E28676C2240EFF1A00EAACEB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E28676C0240EFF1A00EAACEB /* LaunchScreen.storyboard */; };
+		E28676CA240F022000EAACEB /* start.txt in Resources */ = {isa = PBXBuildFile; fileRef = E28676C9240F022000EAACEB /* start.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		E28676BE240EFF1A00EAACEB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E28676C1240EFF1A00EAACEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E28676C3240EFF1A00EAACEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E28676C9240F022000EAACEB /* start.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = start.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		E28676B4240EFF1800EAACEB /* Project5 */ = {
 			isa = PBXGroup;
 			children = (
+				E28676C9240F022000EAACEB /* start.txt */,
 				E28676B5240EFF1800EAACEB /* AppDelegate.swift */,
 				E28676B7240EFF1800EAACEB /* SceneDelegate.swift */,
 				E28676B9240EFF1800EAACEB /* ViewController.swift */,
@@ -126,6 +129,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E28676C2240EFF1A00EAACEB /* LaunchScreen.storyboard in Resources */,
+				E28676CA240F022000EAACEB /* start.txt in Resources */,
 				E28676BF240EFF1A00EAACEB /* Assets.xcassets in Resources */,
 				E28676BD240EFF1800EAACEB /* Main.storyboard in Resources */,
 			);
