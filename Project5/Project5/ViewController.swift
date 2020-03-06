@@ -31,6 +31,7 @@ class ViewController: UITableViewController {
         }
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTapped))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(startGame))
         startGame()
     }
 
@@ -53,8 +54,8 @@ class ViewController: UITableViewController {
     {
         let lowerAnswer = answer.lowercased()
         
-        let errorTitle : String
-        let errorMessage : String
+        //let errorTitle : String
+        //let errorMessage : String
         
         if(isReal(lowerAnswer))
         {
@@ -70,25 +71,26 @@ class ViewController: UITableViewController {
                 }
                 else
                 {
-                    errorTitle = "Word already used!"
-                    errorMessage = "You've already used that word"
+                    //errorTitle = "Word already used!"
+                    //errorMessage = "You've already used that word"
+                    showErrorMessage("You've already used that word", title: "Word already used!")
                 }
             }
             else
             {
-                errorTitle = "Word not possible!"
-                errorMessage = "You can't make that word"
+                //errorTitle = "Word not possible!"
+                //errorMessage = "You can't make that word"
+                showErrorMessage("You can't make that word", title: "Word not possible!")
             }
         }
         else
         {
-            errorTitle = "Word not real!"
-            errorMessage = "That's not a real word!"
+            //errorTitle = "Word not real!"
+            //errorMessage = "That's not a real word!"
+            showErrorMessage("That's not a real word!", title: "Word not real")
         }
         
-        let ac = UIAlertController(title: errorTitle, message: errorMessage, preferredStyle: .alert)
-        ac.addAction(UIAlertAction(title: "OK", style: .default))
-        present(ac, animated: true)
+        
     }
     
     func isPossible(_ input: String) -> Bool
@@ -111,6 +113,10 @@ class ViewController: UITableViewController {
     }
     func isReal(_ input: String) -> Bool
     {
+        if(input.count < 3)
+        {
+            return false;
+        }
         let checker = UITextChecker()
         let range = NSRange(location: 0, length: input.utf16.count)
         let misspelledRange = checker.rangeOfMisspelledWord(in: input, range: range, startingAt: 0, wrap: false, language: "en")
@@ -118,7 +124,14 @@ class ViewController: UITableViewController {
         return misspelledRange.location == NSNotFound
     }
     
-    func startGame()
+    func showErrorMessage(_ message: String,title: String)
+    {
+        let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .default))
+        present(ac, animated: true)
+    }
+    
+    @objc func startGame(_ action: UIBarButtonItem? = nil)
     {
         title = allWords.randomElement()
         usedWords.removeAll(keepingCapacity: true)
